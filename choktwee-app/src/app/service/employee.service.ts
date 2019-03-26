@@ -9,13 +9,13 @@ import { Employee } from '../class/employee';
 })
 export class EmployeeService {
 
-  readonly url = 'http://localhost:3000/api/employee'
+  readonly url = 'http://localhost:3000/api/employee';
 
   constructor(private http: HttpClient) {}
-  list: Employee[]
-  
-  refreshList(){
-    this.http.get<Employee[]>(`${this.url}/all`).toPromise().then(res => this.list = res as Employee[])
+  list: Employee[];
+
+  refreshList() {
+    this.http.get<Employee[]>(`${this.url}/all`).toPromise().then(res => this.list = res as Employee[]);
   }
 
 

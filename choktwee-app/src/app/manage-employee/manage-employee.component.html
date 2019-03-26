@@ -1,35 +1,52 @@
-<app-add-employee></app-add-employee>
-  
-<table id="myTable" class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID_MST_employeeId</th>
-      <th scope="col">employee_type</th>
-      <th scope="col">employee_first_name</th>
-      <th scope="col">employee_last_name</th>
-      <th scope="col">employee_citizen_id</th>
-      <th scope="col">employee_gender</th>
-      <th scope="col">employee_telephone</th>
-      <th scope="col">employee_salary</th>
-      <th scope="col">employee_birthday</th>
-      <th scope="col">username</th>
-      <th scope="col">password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let emp of service.list">
-        <td>{{emp.ID_MST_employeeId}}</td>
-        <td>{{emp.employee_type}}</td>
-        <td>{{emp.employee_first_name}}</td>
-        <td>{{emp.employee_last_name}}</td>
-        <td>{{emp.employee_citizen_id}}</td>
-        <td>{{emp.employee_gender}}</td>
-        <td>{{emp.employee_telephone}}</td>
-        <td>{{emp.employee_salary}}</td>
-        <td>{{emp.employee_birthday}}</td>
-        <td>{{emp.username}}</td>
-        <td>{{emp.password}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="app-title">
+  <div>
+    <h1><i class="fa fa-th-list"></i> เพิ่มพนักงาน</h1>
+  </div>
+  <ul class="app-breadcrumb breadcrumb side">
+    <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+    <li class="breadcrumb-item">manage-employee</li>
+  </ul>
+</div>
 
+<app-add-employee></app-add-employee>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="tile">
+      <div class="tile-body">
+        <button type="button" class="btn btn-primary btn-add" data-toggle="modal" data-target="#addEmp">
+          เพิ่มพนักงาน
+        </button>
+        <table datatable [dtOptions]="dtOptions" class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">ID_MST_employeeId</th>
+              <th scope="col">employee_type</th>
+              <th scope="col">employee_first_name</th>
+              <th scope="col">employee_last_name</th>
+              <th scope="col">employee_citizen_id</th>
+              <th scope="col">employee_gender</th>
+              <th scope="col">employee_telephone</th>
+              <th scope="col">employee_salary</th>
+              <th scope="col">employee_birthday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let emp of service.list">
+              <td>{{emp.ID_MST_employeeId}}</td>
+              <td>{{emp.employee_type}}</td>
+              <td>{{emp.employee_first_name}}</td>
+              <td>{{emp.employee_last_name}}</td>
+              <td>{{emp.employee_citizen_id}}</td>
+              <td>{{emp.employee_gender}}</td>
+              <td>{{emp.employee_telephone}}</td>
+              <td>{{emp.employee_salary}}</td>
+              <td>{{emp.employee_birthday}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
